@@ -1,0 +1,192 @@
+pontos = 0
+print('-='*20)
+print('Criador: @maisaempython')
+print('-='*20)
+
+print('''Bem vindo(a) ao jogo de adivinhação da Maisa 
+Cada pergunta que você acertar, ganhará um ponto, se errar, não perde ponto
+mas também não irá ganhar.''')
+pgt = input('Vamos começar? Digite "s" para [Sim] ').strip().lower()
+if 's' in pgt:
+    print('Qual o nome inteiro da Maisa?')
+    print('''
+        Digite "a" para [A]
+        Digite "b" para [B]
+        Digite "c" para [C]
+        [A] Maisa da Silva Andrade
+        [B] Maisa Andrade da Silva
+        [C] Maisa Silva Andrade''')
+    resposta = input('Digite a alternativa correta: ').strip().lower()
+    if resposta == 'a':
+        print('Você acertou e ganhou 1 ponto! Parabéns')
+        pontos = pontos + 1
+        print(f'Você tem {pontos} pontos!')
+    else:
+        print('Você errou! Mais sorte na próxima... ')
+        print(f'Você tem {pontos} pontos!')
+
+    print('Qual o mês em que a Maisa faz aniversário? ')
+    print('''
+        Digite "a" para [A]
+        Digite "b" para [B]
+        Digite "c" para [C]
+        [A] Junho
+        [B] Agosto
+        [C] Maio''')
+    resposta2 = input('Digite a alternativa correta: ').strip().lower()
+    if resposta2 == 'c':
+        print('Você acertou e ganhou 1 ponto! Parabéns')
+        pontos = pontos + 1
+        print(f'Você tem {pontos} pontos!')
+    else:
+        print('Você errou! Mais sorte na próxima... ')
+        print(f'Você tem {pontos} pontos!')
+
+    print('Qual o personagem que Maisa interpretou em "Carrosel"? ')
+    print('''
+        Digite "a" para [A]
+        Digite "b" para [B]
+        Digite "c" para [C]
+        [A] Daniela
+        [B] Valéria
+        [C] Carmen''')
+    resposta3 = input('Digite a alternativa correta: ').strip().lower()
+    if resposta3 == 'b':
+        print('Você acertou e ganhou 1 ponto! Parabéns')
+        pontos = pontos + 1
+        print(f'Você tem {pontos} pontos!')
+    else:
+        print('Você errou! Mais sorte na próxima... ')
+        print(f'Você tem {pontos} pontos!')
+
+    print('Maisa tinha qual idade em sua primeira aparição na TV aberta? ')
+    print('''
+        Digite "a" para [A]
+        Digite "b" para [B]
+        Digite "c" para [C]
+        [A] 6 anos
+        [B] 3 anos
+        [C] 10 anos''')
+    resposta4 = input('Digite a alternativa correta: ').strip().lower()
+    if resposta3 == 'b':
+        print('Você acertou e ganhou 1 ponto! Parabéns')
+        pontos = pontos + 1
+        print(f'Você tem {pontos} pontos!')
+    else:
+        print('Você errou! Mais sorte na próxima... ')
+        print(f'Você tem {pontos} pontos!')
+
+    print('Qual o nome do namorado da Maisa? ')
+    print('''
+        Digite "a" para [A]
+        Digite "b" para [B]
+        Digite "c" para [C]
+        [A] Nicholas Arashiro
+        [B] Bruno Berti
+        [C] Nego Ney''')
+    resposta5 = input('Digite a alternativa correta: ').strip().lower()
+    if resposta5 == 'a':
+        print('Você acertou e ganhou 1 ponto! Parabéns')
+        pontos = pontos + 1
+        print(f'Você tem {pontos} pontos!')
+    else:
+        print('Você errou! Mais sorte na próxima... ')
+        print(f'Você tem {pontos} pontos!')
+
+    print('Maisa nasceu em qual cidade? ')
+    print('''
+        Digite "a" para [A]
+        Digite "b" para [B]
+        Digite "c" para [C]
+        [A] Belo Horizonte - MG
+        [B] Santos - SP
+        [C] São Bernardo do Campo - SP''')
+    resposta6 = input('Digite a alternativa correta: ').strip().lower()
+    if resposta6 == 'c':
+        print('Você acertou e ganhou 1 ponto! Parabéns')
+        pontos = pontos + 1
+        print(f'Você tem {pontos} pontos!')
+    else:
+        print('Você errou! Mais sorte na próxima... ')
+        print(f'Você tem {pontos} pontos!')
+
+    print('Qual foi o primeiro filme que Maisa atuou? ')
+    print('''
+        Digite "a" para [A]
+        Digite "b" para [B]
+        Digite "c" para [C]
+        [A] Tudo por um Popstar
+        [B] Carrosel: O Filme
+        [C] Internet: O Filme''')
+    resposta7 = input('Digite a alternativa correta: ').strip().lower()
+    if resposta7 == 'b':
+        print('Você acertou e ganhou 1 ponto! Parabéns')
+        pontos = pontos + 1
+        print(f'Você tem {pontos} pontos!')
+    else:
+        print('Você errou! Mais sorte na próxima... ')
+        print(f'Você tem {pontos} pontos!')
+
+    print('A Maisa torce para qual time? ')
+    print('''
+        Digite "a" para [A]
+        Digite "b" para [B]
+        Digite "c" para [C]
+        [A] Corinthians
+        [B] Palmeiras
+        [C] São Paulo''')
+    resposta8 = input('Digite a alternativa correta: ').strip().lower()
+    if resposta8 == 'a':
+        print('Você acertou e ganhou 1 ponto! Parabéns')
+        pontos = pontos + 1
+        print(f'Você tem {pontos} pontos!')
+    elif resposta8 == 'b':
+        print('Ela é Palmeirense mas não assume viu... kkk')
+        print('Mas ela se diz Corinthiana, então errou :c')
+        print(f'Você tem {pontos} pontos!')
+    else:
+        print('Você errou! Mais sorte na próxima... ')
+        print(f'Você tem {pontos} pontos!')
+
+    print('Maisa apareceu pela primeira vez no programa de qual apresentador? ')
+    print('''
+        Digite "a" para [A]
+        Digite "b" para [B]
+        Digite "c" para [C]
+        [A] Silvio Santos - SBT
+        [B] Raul Gil - Record
+        [C] Gugu Liberatto - Record''')
+    resposta9 = input('Digite a alternativa correta: ').strip().lower()
+    if resposta9 == 'b':
+        print('Você acertou e ganhou 1 ponto! Parabéns')
+        pontos = pontos + 1
+        print(f'Você tem {pontos} pontos!')
+    else:
+        print('Você errou! Mais sorte na próxima... ')
+        print(f'Você tem {pontos} pontos!')
+
+    print('Qual desses personagens, a Maisa dublou? ')
+    print('''
+        Digite "a" para [A]
+        Digite "b" para [B]
+        Digite "c" para [C]
+        [A] Nina - O Touro Ferdinando
+        [B] Fiona - Shrek
+        [C] Mary Austin - Bohemian Rhapsody''')
+    resposta10 = input('Digite a alternativa correta: ').strip().lower()
+    if resposta10 == 'a':
+        print('Você acertou e ganhou 1 ponto! Parabéns')
+        pontos = pontos + 1
+        print(f'Você tem {pontos} pontos!')
+    else:
+        print('Você errou! Mais sorte na próxima... ')
+        print(f'Você tem {pontos} pontos!')
+    print('Você acabou o jogo!')
+    print(f'Você acertou um total de {pontos} perguntas!')
+    print(f'E fez um total de {pontos} pontos!')
+    if pontos == 0 and pontos <= 3:
+        print('Você não conhece a Maisa tão bem assim...')
+    elif pontos >= 4 and pontos <= 7:
+        print('Você conhece a Maisa ein, hehe')
+    else:
+        print('Você sabe muito sobre a Maisa, parabéns :D')

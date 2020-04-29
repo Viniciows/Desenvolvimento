@@ -1,0 +1,27 @@
+continuar = 's'
+print('Modelo da regra de três: ')
+print('''
+      w ----- x
+      y ----- z
+      ''')
+while continuar.lower() == 's':
+    sc = input('''Qual regra de três será usada?
+    [IP] - Inversamente Proporcional
+    [DP] - Diretamente Proporcional
+    Digite aqui: ''')
+
+    if sc == 'IP' or sc == 'ip':
+        print('Você escolheu a regra de três inversamente proporcional.')
+        w1 = float(input('Insira o valor de "W": '))
+        x1 = float(input('Insira o valor de "X": '))
+        y1 = float(input('Insira o valor de "Y": '))
+        z1 = print(f'O valor de "Z" é: {x1*y1/w1}')
+
+    if sc == 'DP' or sc == 'dp':
+        print('Você escolheu a regra de três diretamente proporcional.')
+        w1 = float(input('Insira o valor de "W": '))
+        x1 = float(input('Insira o valor de "X": '))
+        y1 = float(input('Insira o valor de "Y": '))
+        z1 = print(f'O valor de "Z" é: {w1 * x1 / y1}')
+
+    continuar = input('Gerar outra regra de três? [S] para Sim e [N] para Não: ')

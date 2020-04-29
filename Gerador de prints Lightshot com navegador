@@ -1,0 +1,22 @@
+from random import randint
+import os
+# Gerador de prints do Lightshot
+continuar = 's'
+letras = 0
+letras = ('a','b','c','d','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',
+          '0','1','2','3','4','5','6','7','8','9')
+print('Bem vindo ao programa de prints aleatórias, vamos começar?')
+gerar = input('Digite "S" [SIM] para gerar uma print aleatória: ').lower()
+if 's' in gerar:
+    while continuar.lower() == 's':
+        caractere1 = letras[randint(0, 34)]
+        caractere2 = letras[randint(0, 34)]
+        caractere3 = letras[randint(0, 34)]
+        caractere4 = letras[randint(0, 34)]
+        caractere5 = letras[randint(0, 34)]
+        caractere6 = letras[randint(0, 34)]
+        mstring = "https://prnt.sc/"+caractere1+caractere2+caractere3+caractere4+caractere5+caractere6
+
+        print('A print gerada aleatoriamente é: ' + mstring)
+        os.startfile(mstring)
+        continuar = input('Gerar outra print? [S] para Sim e [N] para Não: ')

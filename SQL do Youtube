@@ -1,0 +1,71 @@
+import sqlite3
+continuar = 's'
+
+banco = sqlite3.connect('youtube.db')
+cursor = banco.cursor()
+#cursor.execute("CREATE TABLE divulgacao (nome TEXT, empresa TEXT, tipo TEXT, preço INTEGER, quantidade INTEGER) ")
+banco.commit()
+while continuar.lower() == 's':
+    opçoes = input("""                    O que deseja fazer? 
+                   [A] - Cadastrar um cliente
+                   [B] - Atualizar um cadastro
+                   [C] - Deletar um cadastro\n""").strip().lower()
+    if opçoes == 'a':
+        nome = input('Nome do Cliente: ')
+        empresa = input('Nome da Empresa: ')
+        tipo = input('Tipo de divulgação: ')
+        preço = input('Preço da divulgação: ')
+        quantidade = input('Quantidade de vídeos: ')
+        cursor.execute(f"INSERT INTO divulgacao "
+                        f"(nome,empresa, tipo, preço, quantidade)"
+                        f"VALUES('{nome}','{empresa}','{tipo}',{preço},{quantidade})")
+        print('Cliente cadastrado com sucesso! ')
+        banco.commit()
+    elif opçoes == 'b':
+        pgt = input("""O que deseja alterar no cadastro? 
+                    [A] - Nome do Cliente
+                    [B] - Nome da Empresa
+                    [C] - Tipo de Divulgação
+                    [D] - Preço da Divulgação
+                    [E] - Quantidade de Vídeos\n""").strip().lower()
+        if pgt == 'a':
+            novoNome = input('Digite o novo nome do cliente: ')
+            clienteID = input('Digite o ID do cliente: ')
+            cursor.execute(f"UPDATE divulgacao SET nome = '{novoNome}' WHERE id = {clienteID}")
+            print('Nome alterado com sucesso!')
+            banco.commit()
+        elif pgt == 'b':
+            novaEmpresa = input('Digite o novo nome da empresa: ')
+            clienteID2 = input('Digite o ID do cliente: ')
+            cursor.execute(f"UPDATE divulgacao SET empresa = '{novaEmpresa}' WHERE id = {clienteID2}")
+            print('Nome alterado com sucesso!')
+            banco.commit()
+        elif pgt == 'c':
+            tipoDivulgação = input('Digite o novo tipo de divulgação: ')
+            clienteID3 = input('Digite o ID do cliente: ')
+            cursor.execute(f"UPDATE divulgacao SET tipo = '{tipoDivulgação}' WHERE id = {clienteID3}")
+            print('Tipo de divulgação alterada com sucesso!')
+            banco.commit()
+        elif pgt == 'd':
+            preçoDivulgação = input('Digite o novo preço da divulgação: ')
+            clienteID4 = input('Digite o ID do cliente: ')
+            cursor.execute(f"UPDATE divulgacao SET preço = {preçoDivulgação} WHERE id = {clienteID4}")
+            banco.commit()
+            print('Preço de divulgação alterada com sucesso!')
+        elif pgt == 'e':
+            video = int(input('Digite quantos vídeos faltam: '))
+            idcliente = int(input('Digite o ID do cliente: '))
+            if video == 0:
+                cursor.execute(f"DELETE FROM divulgacao WHERE id = {idcliente}")
+                print('Como a divulgação acabou, o cadastro do cliente foi removido.')
+                banco.commit()
+            else:
+                cursor.execute(f"UPDATE divulgacao SET quantidade = {video} WHERE id = {idcliente}")
+                print('Cadastro atualizado.')
+                banco.commit()
+    else:
+        ClientDelete = input('ID do cliente a ser removido: ')
+        cursor.execute(f"DELETE FROM divulgacao WHERE id = {ClientDelete}")
+        print('Remoção realizada com sucesso.')
+        banco.commit()
+    continuar = input('Fazer outro cadastro/atualização/remoçao? [S] para Sim e [N] para Não: ')
